@@ -4,4 +4,3 @@ export const Type = {
   SET_USER: "SET_USER",
   EMPTY_BASKET: "EMPTY_BASKET",
 };
-//buhala typo chgr slemifetr yeteleyayebota sntera type error endaynor new.
