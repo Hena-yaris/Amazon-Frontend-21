@@ -56,22 +56,10 @@ const Header = () => {
                 <option value="">EN</option>
               </select>
             </Link>
-            <Link to={!user && "/auth"}>
-              <div>
-                {user ? (
-                  <>
-                    <p>Hello {user?.email?.split("@")[0]}</p>
-                    <span onClick={() => (user ? auth.signOut() : null)}>
-                      Sign Out
-                    </span>
-                  </>
-                ) : (
-                  <>
+            <Link to="">
+              
                     <p>Hello, Sign In</p>
                     <span>Account & Lists</span>
-                  </>
-                )}
-              </div>
             </Link>
             <Link to="/orders">
               <p>returns</p>
