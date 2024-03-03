@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './SignUp.module.css';
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 import {auth} from '../../utility/firebase'
 import {signInWithEmailAndPassword,createUserWithEmailAndPassword} from 'firebase/auth'
 import { DataContext} from '../../Components/DataProvider/DataProvider'
@@ -19,6 +19,7 @@ const Auth = () => {
   });
 
   const [{user},dispatch]=useContext(DataContext);
+  const navigate=useNavigate();
 
 // console.log(user);
 
@@ -34,11 +35,13 @@ const Auth = () => {
         dispatch({
           type:Type.SET_USER,
           user:userInfo.user
-        })
-        setLoading({...loading,signIn:false});
+        });
+          setLoading({ ...loading, signIn: false });
+          navigate("/")
       }).catch((err)=>{
         // console.log(err.message);
         setError(err.message)
+        setLoading({ ...loading, signIn: false });
       })
     }
     else{
@@ -48,11 +51,13 @@ const Auth = () => {
         dispatch({
           type:Type.SET_USER,
           user:userInfo.user
-        })
-        setLoading({...loading,signUP:false });
+        });
+          setLoading({ ...loading, signIn: false });
+          navigate("/")
       }).catch((err)=>{
         // console.log(err);
         setError(err.message);
+        setLoading({ ...loading, signIn: false });
       })
 
     }
@@ -62,7 +67,7 @@ const Auth = () => {
   return (
     <section className={classes.login}>
       {/* logo */}
-      <Link>
+      <Link to='/'>
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
           alt=""
@@ -102,7 +107,7 @@ const Auth = () => {
             name="signin"
             className={classes.login__signInButton}
           >
-            {loading.signIn ? <ClipLoader color="#000" size={20} /> : "Sign In"}
+            {loading.signIn ? <ClipLoader color="#000" size={15} /> : "Sign In"}
           </button>
         </form>
 
@@ -121,7 +126,7 @@ const Auth = () => {
           className={classes.login__registerButton}
         >
           {loading.signUP ? (
-            <ClipLoader color="#000" size={20} />
+            <ClipLoader color="#000" size={15} />
           ) : (
             "Create your Amazon Account"
           )}
