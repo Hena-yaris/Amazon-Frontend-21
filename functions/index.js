@@ -24,7 +24,6 @@ app.post("/payment/create", async (req, res) => {
       amount: total,
       currency: "usd",
     });
-    // console.log(paymentIntent);
     res.status(201).json({
       clientSecret: paymentIntent.client_secret,
     });
@@ -35,5 +34,4 @@ app.post("/payment/create", async (req, res) => {
   }
 });
 // app.listen(4050, console.log("Amazon Server Running ..."));
-
 exports.api = onRequest(app);
