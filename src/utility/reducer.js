@@ -14,7 +14,6 @@ export const reducer = (state, action) => {
       );
       if (!existingItem) {
         return {
-          //yh malet statachnnn kipe adrgo be action amakagnnet add yemideregewn item add eyaderegn new.
           ...state,
           basket: [...state.basket, { ...action.item, amount: 1 }],
         };
@@ -57,7 +56,7 @@ export const reducer = (state, action) => {
     case Type.SET_USER:
       return {
         ...state,
-        user: action.user,// actionu lay yemnasgebaw data
+        user: action.user,
       };
 
     default:
