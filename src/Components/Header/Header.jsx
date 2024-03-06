@@ -32,7 +32,7 @@ const Header = () => {
                 <SlLocationPin />
               </span>
               <div>
-                <p>Deliver to</p>
+                <p>Deliver href</p>
                 <span>Ethiopia</span>
               </div>
             </div>

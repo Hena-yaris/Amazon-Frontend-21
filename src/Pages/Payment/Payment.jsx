@@ -93,8 +93,8 @@ function Payment() {
           <h3>Delivery Address</h3>
           <div>
             <div>{user?.email}</div>
-            <div>123 React Lane</div>
-            <div>Chicago, IL</div>
+            <div>one እጥፍ↘  two ቅንጥስ🖖 </div>
+            <div>አቢሲኒያ, ህብረ-ሓመልሚል</div>
           </div>
         </div>
         <hr />
